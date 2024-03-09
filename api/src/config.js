@@ -1,7 +1,5 @@
 const ENVIRONMENT = getEnvironment();
-const MONGO_URL =
-  "mongodb://ub26fnchwxfinjn0jpua:iwXlR0TMGAQU7XzeByFS@n1-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017,n2-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017/bzourapknoo1r3d?replicaSet=rs0";
-
+const MONGO_URL = process.env.MONGO_URL || "mongodb://localhost:27017/technical-test-4";
 const PORT = process.env.PORT || 8080;
 const secret = process.env.SECRET || "not-so-secret";
 const APP_URL = process.env.APP_URL || "http://localhost:8082";

@@ -26,6 +26,7 @@ Time to be creative, and efficient. Do what you think would be the best for your
 
 - cd api
 - Run `npm i`
+- Run `cp .env.example .env` and fill the .env file with your own values
 - Run `npm run dev`
 
 ## Setup app
