@@ -29,7 +29,12 @@ export default () => {
             if (user) dispatch(setUser(user));
           } catch (e) {
             console.log("e", e);
-            toast.error("Wrong login", e.code);
+            toast.error("Signup error", e.code);
+            if (e.code == "PASSWORD_NOT_VALIDATED") {
+              actions.setFieldError("password", "Password invalide. Veuillez choisir un mot de passe entre 6 et 100 caractères")
+            } else if (e.code == "USER_ALREADY_REGISTERED") {
+              actions.setFieldError("username", "Username déjà utilisé. Veuillez choisir un autre nom d'utilisateur")
+            }
           }
           actions.setSubmitting(false);
         }}>
