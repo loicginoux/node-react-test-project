@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const MODELNAME = "project";
 
 const Schema = new mongoose.Schema({
-  name: { type: String, unique: true },
+  name: { type: String},
   description: { type: String },
   website: { type: String },
 
@@ -23,6 +23,8 @@ const Schema = new mongoose.Schema({
   last_updated_at: { type: Date, default: Date.now },
   status: { type: String },
 });
+
+Schema.index({ name: 1, organisation: 1 }, { unique: true });
 
 const OBJ = mongoose.model(MODELNAME, Schema);
 module.exports = OBJ;
