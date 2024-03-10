@@ -11,7 +11,7 @@ import SelectMonth from "./../../components/selectMonth";
 import { getDaysInMonth } from "./utils";
 
 const Activity = () => {
-  const [date, setDate] = useState(null);
+  const [date, setDate] = useState("");
   const [user, setUser] = useState(null);
   const [project, setProject] = useState("");
 
